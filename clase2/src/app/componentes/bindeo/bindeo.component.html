@@ -1,0 +1,18 @@
+<div class="container">
+    <img [src]="srcGatito" alt="Gatito">
+    El gatito se llama {{ nombre }}
+
+    <br><br>
+
+    <input [(ngModel)]="nombre" type="text" name="gato" id="gato">
+
+    <input type="button" value="Enviar" (click)="enviar($event)">
+
+    <div *ngIf="nombre == 'Juan'">
+        El gatito se llama Juan
+    </div>
+
+    <div *ngFor="let mascota of lista; index as i">
+        {{ i }} - {{ mascota.nombre }}
+    </div>
+</div>
