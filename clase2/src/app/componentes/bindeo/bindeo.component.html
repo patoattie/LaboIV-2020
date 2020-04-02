@@ -12,7 +12,10 @@
         El gatito se llama Juan
     </div>
 
-    <div *ngFor="let mascota of lista; index as i">
-        {{ i }} - {{ mascota.nombre }}
+    <div *ngFor="let mascota of lista; index as i" class="mascota">
+        <app-mascota 
+            [mascota]="mascota"
+            (turno)="sacarTurno($event)">
+        </app-mascota>
     </div>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Mascota } from '../../clases/mascota';
+import { MascotaComponent } from '../mascota/mascota.component';
 
 @Component({
   selector: 'app-bindeo',
@@ -24,7 +25,12 @@ export class BindeoComponent implements OnInit {
   public enviar(e) {
     // console.log(e);
     console.log(this.nombre);
-    this.lista.push(new Mascota(this.nombre));
+    this.lista.push(new Mascota(this.nombre, this.srcGatito, 'Gato'));
   }
+
+  public sacarTurno(e) {
+    console.log(e);
+  }
+
 
 }

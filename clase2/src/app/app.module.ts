@@ -1,14 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { BindeoComponent } from './componentes/bindeo/bindeo.component';
+import { MascotaComponent } from './componentes/mascota/mascota.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BindeoComponent
+    BindeoComponent,
+    MascotaComponent
   ],
   imports: [
     BrowserModule,
