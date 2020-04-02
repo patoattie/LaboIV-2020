@@ -13,7 +13,8 @@ export class BindeoComponent implements OnInit {
 
   constructor() {
     this.nombre = 'Felix';
-    this.srcGatito = 'https://www.whiskas.es/assets/img/article/Kitten/care.jpg';
+    // this.srcGatito = 'https://www.whiskas.es/assets/img/article/Kitten/care.jpg';
+    this.srcGatito = 'https://www.purina.es/sites/g/files/mcldtz1656/files/styles/nppe_article_listing_image_and_description/public/2017-11/Bringing-Your-Kitten-Home_3.jpg?itok=VL7IwOU-';
     this.lista = [];
   }
 
