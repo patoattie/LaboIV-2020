@@ -37,8 +37,8 @@ export class MascotasService {
 
 
   private inicializarListaMascotas(): void {
-    this.agregarMascota(new Mascota('Chatrán', '../assets/perro.jpg', TipoMascota.PERRO));
-    this.agregarMascota(new Mascota('Félix', '../assets/gato.jpg', TipoMascota.GATO));
+    this.agregarMascota(new Mascota('Luna', '../assets/perro.jpg', TipoMascota.PERRO));
+    this.agregarMascota(new Mascota('Nachi', '../assets/gato.jpg', TipoMascota.GATO));
     this.agregarMascota(new Mascota('Nemo', '../assets/pez.jpg', TipoMascota.PEZ));
   }
 
