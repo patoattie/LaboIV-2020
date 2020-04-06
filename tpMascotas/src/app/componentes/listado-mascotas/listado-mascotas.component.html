@@ -1,13 +1,13 @@
-<!-- <ul>
-    <li *ngFor="let mascota of listaMascotas">{{ mascota.nombre }}</li>
-</ul> -->
-
 <table>
     <tr>
         <th>Mascota</th>
+        <th>Acción</th>
     </tr>
     <tr *ngFor="let mascota of listaMascotas">
         <td class="{{ mascota.tipo }}">{{ mascota.nombre }}</td>
+        <td>
+            <input (click)="mostrarDetalleMascota(mascota)" type="button" value="Ver Detalle">
+        </td>
     </tr>
 </table>
 
