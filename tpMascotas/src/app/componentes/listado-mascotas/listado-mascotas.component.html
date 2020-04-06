@@ -1,0 +1,22 @@
+<!-- <ul>
+    <li *ngFor="let mascota of listaMascotas">{{ mascota.nombre }}</li>
+</ul> -->
+
+<table>
+    <tr>
+        <th>Mascota</th>
+    </tr>
+    <tr *ngFor="let mascota of listaMascotas">
+        <td class="{{ mascota.tipo }}">{{ mascota.nombre }}</td>
+    </tr>
+</table>
+
+<p>
+    (*) Referencia de colores: [
+    <span class="perro">Perro</span>
+    |
+    <span class="gato">Gato</span>
+    |
+    <span class="pez">Pez</span>
+    ]
+</p>
