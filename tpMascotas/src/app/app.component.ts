@@ -29,4 +29,8 @@ export class AppComponent implements OnInit {
     this.mostrarDetalleMascota = false;
   }
 
+  agregarMascota(mascota: Mascota): void {
+    this.mascotas.agregarMascota(this.listaMascotas, mascota);
+  }
+
 }

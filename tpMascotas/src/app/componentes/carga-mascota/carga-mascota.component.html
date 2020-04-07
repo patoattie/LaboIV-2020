@@ -1,0 +1,14 @@
+<form #mascotaForm="ngForm" (ngSubmit)="agregarMascota()">
+  <label for="nombreMascota">Nombre</label>
+  <input [(ngModel)]="mascota.nombre" type="text" id="nombreMascota" name="nombreMascota" placeholder="Nombre de la mascota" required>
+
+  <label for="tipoMascota">Tipo</label>
+  <select [(ngModel)]="mascota.tipo" id="tipoMascota" name="tipoMascota" required>
+    <option *ngFor="let tipo of tiposMascota" value="{{ tipo }}">{{ tipo }}</option>
+  </select>
+
+  <label for="imagenMascota">Imagen</label>
+  <input type="file" accept="image/*" placeholder="Seleccione archivo de imagen" id="imagenMascota" name="imagenMascota" (change)="obtenerPathImagen($event)">
+
+  <input [disabled]="!mascotaForm.form.valid" type="submit" value="Agregar a la Lista">
+</form>

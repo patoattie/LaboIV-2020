@@ -1,3 +1,4 @@
 <!-- <router-outlet></router-outlet> -->
+<app-carga-mascota (agregarMascotaEvent)="agregarMascota($event)"></app-carga-mascota>
 <app-mascota *ngIf="mostrarDetalleMascota" (ocultarMascotaEvent)="ocultarDetalleMascota()" [mascota]="unaMascota"></app-mascota>
 <app-listado-mascotas (mostrarMascotaEvent)="setMascota($event)" [listaMascotas]="listaMascotas"></app-listado-mascotas>
