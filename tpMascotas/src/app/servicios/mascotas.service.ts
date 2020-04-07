@@ -6,40 +6,34 @@ import { TipoMascota } from '../enums/tipo-mascota.enum';
   providedIn: 'root'
 })
 export class MascotasService {
-  private listaMascotas: Mascota[] = [];
 
-  constructor() {
-    this.listaMascotas = this.cargarListaMascotas();
+  constructor() { }
+
+  agregarMascota(listaMascotas: Mascota[], mascota: Mascota): void {
+    listaMascotas.push(mascota);
+    localStorage.setItem('mascotas', JSON.stringify(listaMascotas));
   }
 
   getListaMascotas(): Mascota[] {
-    return this.listaMascotas;
-  }
-
-  agregarMascota(mascota: Mascota): void {
-    this.listaMascotas.push(mascota);
-    localStorage.setItem('mascotas', JSON.stringify(this.listaMascotas));
-  }
-
-  private cargarListaMascotas(): Mascota[] {
+    let listaMascotas: Mascota[] = [];
     const storage: Mascota[] = JSON.parse(localStorage.getItem('mascotas'));
 
     if (storage != null) {
-      this.listaMascotas = storage;
+      listaMascotas = storage;
     }
 
-    if (this.listaMascotas.length === 0) { // Si no hay datos inicializo con 3 mascotas de prueba.
-      this.inicializarListaMascotas();
+    if (listaMascotas.length === 0) { // Si no hay datos inicializo con 3 mascotas de prueba.
+      this.inicializarListaMascotas(listaMascotas);
     }
 
-    return this.listaMascotas;
+    return listaMascotas;
   }
 
 
-  private inicializarListaMascotas(): void {
-    this.agregarMascota(new Mascota('Luna', '../assets/perro.jpg', TipoMascota.PERRO));
-    this.agregarMascota(new Mascota('Nachi', '../assets/gato.jpg', TipoMascota.GATO));
-    this.agregarMascota(new Mascota('Nemo', '../assets/pez.jpg', TipoMascota.PEZ));
+  private inicializarListaMascotas(listaMascotas: Mascota[]): void {
+    this.agregarMascota(listaMascotas, new Mascota('Luna', '../assets/perro.jpg', TipoMascota.PERRO));
+    this.agregarMascota(listaMascotas, new Mascota('Nachi', '../assets/gato.jpg', TipoMascota.GATO));
+    this.agregarMascota(listaMascotas, new Mascota('Nemo', '../assets/pez.jpg', TipoMascota.PEZ));
   }
 
 }

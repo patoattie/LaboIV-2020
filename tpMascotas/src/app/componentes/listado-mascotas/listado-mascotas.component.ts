@@ -1,5 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { MascotasService } from '../../servicios/mascotas.service';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Mascota } from 'src/app/clases/mascota';
 
 @Component({
@@ -8,16 +7,15 @@ import { Mascota } from 'src/app/clases/mascota';
   styleUrls: ['./listado-mascotas.component.css']
 })
 export class ListadoMascotasComponent implements OnInit {
-  listaMascotas: Mascota[] = [];
+  @Input() listaMascotas: Mascota[];
   @Output() mostrarMascotaEvent = new EventEmitter<Mascota>();
 
-  constructor(public mascotas: MascotasService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.listaMascotas = this.mascotas.getListaMascotas();
   }
 
-  mostrarDetalleMascota(mascota: Mascota) {
+  mostrarDetalleMascota(mascota: Mascota): void {
     this.mostrarMascotaEvent.emit(mascota);
   }
 

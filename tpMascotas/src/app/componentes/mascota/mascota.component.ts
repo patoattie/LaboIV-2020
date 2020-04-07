@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Mascota } from '../../clases/mascota';
 
 @Component({
@@ -8,10 +8,14 @@ import { Mascota } from '../../clases/mascota';
 })
 export class MascotaComponent implements OnInit {
   @Input() mascota: Mascota;
+  @Output() ocultarMascotaEvent = new EventEmitter<void>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  ocultarDetalleMascota(): void {
+    this.ocultarMascotaEvent.emit();
+  }
 }

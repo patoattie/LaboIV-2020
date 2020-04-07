@@ -1,17 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Mascota } from './clases/mascota';
+import { MascotasService } from './servicios/mascotas.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'tpMascotas';
-  mascota: Mascota;
+  listaMascotas: Mascota[] = [];
+  unaMascota: Mascota;
+  mostrarDetalleMascota: boolean;
 
-  setMascota(unaMascota: Mascota): void {
-    this.mascota = unaMascota;
+  constructor(private mascotas: MascotasService) { }
+
+  ngOnInit(): void {
+    this.listaMascotas = this.mascotas.getListaMascotas();
+    this.mostrarDetalleMascota = false;
+  }
+
+  setMascota(mascota: Mascota): void {
+    this.unaMascota = mascota;
+    this.mostrarDetalleMascota = true;
+  }
+
+  ocultarDetalleMascota(): void {
+    this.mostrarDetalleMascota = false;
   }
 
 }
