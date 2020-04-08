@@ -9,6 +9,10 @@
   box-sizing: border-box;
 }
 
+input:invalid, select:invalid {
+  border-color: red;
+}
+
 /* Style the submit button */
 input[type=submit] {
   width: 100%;
@@ -24,4 +28,9 @@ input[type=submit] {
 /* Add a background color to the submit button on mouse-over */
 input[type=submit]:hover {
   background-color: #45a049;
+}
+
+input[type=submit]:disabled{
+  background-color: darkolivegreen;
+  cursor: not-allowed;
 }
