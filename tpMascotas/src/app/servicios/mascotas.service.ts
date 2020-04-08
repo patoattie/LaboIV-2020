@@ -10,7 +10,8 @@ export class MascotasService {
   constructor() { }
 
   agregarMascota(listaMascotas: Mascota[], mascota: Mascota): void {
-    listaMascotas.push(mascota);
+    const nuevaMascota: Mascota = new Mascota(mascota.nombre, mascota.imagen, mascota.tipo);
+    listaMascotas.push(nuevaMascota);
     localStorage.setItem('mascotas', JSON.stringify(listaMascotas));
   }
 
