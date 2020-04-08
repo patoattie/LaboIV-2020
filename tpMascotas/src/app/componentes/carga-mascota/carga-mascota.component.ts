@@ -22,6 +22,9 @@ export class CargaMascotaComponent implements OnInit {
 
   agregarMascota(): void {
     this.agregarMascotaEvent.emit(this.mascota);
+    this.mascota.nombre = '';
+    this.mascota.imagen = '';
+    this.mascota.tipo = undefined;
   }
 
 }
