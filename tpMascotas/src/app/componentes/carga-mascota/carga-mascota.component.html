@@ -8,7 +8,7 @@
   </select>
 
   <label for="imagenMascota">Imagen</label>
-  <input type="file" accept="image/*" placeholder="Seleccione archivo de imagen" id="imagenMascota" name="imagenMascota" (change)="obtenerPathImagen($event)">
+  <input [(ngModel)]="mascota.imagen" type="url" id="imagenMascota" name="imagenMascota" placeholder="URL de la imagen" required>
 
   <input [disabled]="!mascotaForm.form.valid" type="submit" value="Agregar a la Lista">
 </form>

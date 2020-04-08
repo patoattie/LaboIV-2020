@@ -24,13 +24,4 @@ export class CargaMascotaComponent implements OnInit {
     this.agregarMascotaEvent.emit(this.mascota);
   }
 
-  obtenerPathImagen(archivos): void {
-    const unArchivo: FileList = archivos.target.files;
-    console.log(unArchivo[0].name);
-    console.log(this.mascota.imagen);
-//    console.log(archivos.item[0]);
-//    console.log(this.mascota.imagen);
-//    this.mascota.imagen = archivos.item[0];
-  }
-
 }
