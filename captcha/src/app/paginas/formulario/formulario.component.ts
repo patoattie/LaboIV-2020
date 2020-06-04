@@ -12,6 +12,6 @@ export class FormularioComponent implements OnInit {
   ngOnInit(): void { }
 
   public resolved(captchaResponse: string) {
-    console.log(`Resolved captcha with response: ${captchaResponse}`);
+    console.log('Respuesta: ', captchaResponse);
   }
 }
