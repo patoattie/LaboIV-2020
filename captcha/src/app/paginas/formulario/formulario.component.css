@@ -1,0 +1,13 @@
+form {
+    padding: 5%;
+}
+
+input {
+    display: block;
+    width: 90%;
+    margin-bottom: 2em;
+}
+
+re-captcha {
+    margin-bottom: 2em;
+}
