@@ -1,0 +1,17 @@
+<p>Mapa con marcadores por defecto y click sobre mapa</p>
+<p>Hacer click sobre mapa y marcador</p>
+<p>Drag en marcadores</p>
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="false"
+    (mapClick)="mapClicked($event)">
+
+
+    <agm-marker *ngFor="let m of markers; let i = index" (markerClick)="clickedMarker(m.label, i)" [latitude]="m.lat"
+        [longitude]="m.lng" [label]="m.label" [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)">
+
+        <agm-info-window>
+            <strong>Titulo de Info window</strong>
+            <p>Campo de info</p>
+        </agm-info-window>
+
+    </agm-marker>
+</agm-map>
